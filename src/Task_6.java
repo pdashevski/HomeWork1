@@ -18,11 +18,12 @@ public class Task_6 {
         System.out.println("Введите число программистов: ");
         String s = reader.readLine();
         int count = Integer.parseInt(s);
+        reader.close();
         if (count < 0) {
             System.out.println("Нет программистов!");
-        } else if (count % 10 == 1 && count % 100 != 11) {
+        } else if (count % 10 == 1 && count % 100 != 11) { //если число заканчиватся на 1, но не заканчивается на 11...
             System.out.println(count + " программист");
-        } else if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 > 20)) {
+        } else if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 > 20)) { //если заканчивается на 2 3 4, но не на 12 и 14
             System.out.println(count + " программиста");
         } else {
             System.out.println(count + " программистов");
