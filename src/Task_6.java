@@ -15,16 +15,18 @@ import java.io.InputStreamReader;
 public class Task_6 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите число программистов: ");
         String s = reader.readLine();
         int count = Integer.parseInt(s);
-        if (count == 1 || count == 21 || count == 31) {
+        if (count < 0) {
+            System.out.println("Нет программистов!");
+        } else if (count % 10 == 1 && count % 100 != 11) {
             System.out.println(count + " программист");
-        } else if (count > 1 && count <= 4 || count > 21 && count <= 24) {
+        } else if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 > 20)) {
             System.out.println(count + " программиста");
-        } else if (count >= 5 && count <= 20 || count == 0 || count >= 25 && count <= 30) {
-            System.out.println(count + " программистов");
         } else {
-            System.out.println(count + " программиста");
+            System.out.println(count + " программистов");
         }
+
     }
 }
